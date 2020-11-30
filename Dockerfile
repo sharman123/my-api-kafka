@@ -1,3 +1,3 @@
 FROM tomcat
 COPY web.xml /usr/local/tomcat/conf/
-COPY build/HW4-ant.war /usr/local/tomcat/webapps/HW.war
+COPY build/my-api-kafka.war /usr/local/tomcat/webapps/HW.war
