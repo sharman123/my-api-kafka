@@ -23,14 +23,11 @@ public class App {
 
 		//Adding the student to records
     	SurveyProducer sp = new SurveyProducer();
-    	sp.saveSurvey("my-topic", survey.getfName(), surveyJson);
+    	sp.saveSurvey("my-topic", surveyJson);
 
     	SurveyConsumer surveyConsumer = new SurveyConsumer();
 		List<String> surveys = surveyConsumer.getSurveys("my-topic");
- //   	Survey survey = new Survey("Ramesh", "Fadatare", "2020-10-01");
-        
-//    	surveyDao.saveSurvey(survey);
-        surveys.forEach(s -> System.out.println(s));
+         surveys.forEach(s -> System.out.println(s));
         
     }
 

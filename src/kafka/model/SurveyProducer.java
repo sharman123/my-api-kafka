@@ -13,7 +13,7 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
 public class SurveyProducer {
-	public void saveSurvey(String topic, String key, String survey) throws Exception {
+	public void saveSurvey(String topic, String survey) throws Exception {
 
 		// Assign topicName to string variable
 		String topicName = topic;
@@ -43,7 +43,7 @@ public class SurveyProducer {
 		props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
 		props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-
+		String key = "myKey";
 		Producer<String, String> producer = new KafkaProducer<String, String>(props);
 		producer.send(new ProducerRecord<String, String>(topicName, key, survey));
 		System.out.println("Message sent successfully");

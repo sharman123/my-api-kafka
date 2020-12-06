@@ -36,12 +36,11 @@ public class SurveyResource {
 	@Path("/create")
 	@Consumes("application/json")
 	public void addSurvey(Survey survey) throws Exception {
-		//survey to json hibernate
 		ConvertJavaObjectToJson sjo = new ConvertJavaObjectToJson(survey);
 		String surveyJson = sjo.javaObjectToJson();
 		//Adding the student to records
 		SurveyProducer surveyProducer = new SurveyProducer();
-		surveyProducer.saveSurvey("my-topic", survey.getfName(), surveyJson);
+		surveyProducer.saveSurvey("my-topic", surveyJson);
 		
 	}
 
