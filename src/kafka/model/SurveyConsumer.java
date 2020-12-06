@@ -44,7 +44,7 @@ public class SurveyConsumer {
 	        }); 
 */	      
 	      while (true) {
-	         ConsumerRecords<String, Object> records = consumer.poll(Duration.ofMillis(10000));
+	         ConsumerRecords<String, Object> records = consumer.poll(Duration.ofMillis(1000));
 	         if (!records.isEmpty()){
 	        	 records.forEach(record -> {
 	   	    	  recordsList.add((String) record.value());
